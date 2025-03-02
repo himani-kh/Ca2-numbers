@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Number Facts</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Facts</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Number Facts</h1>
-    <input type="number" id="numberInput" placeholder="Enter a number" />
-    <button id="fetchFact">Get Fact</button>
-    <p id="factDisplay"></p>
-  </div>
-  <script src="script.js"></script>
+    <div class="container">
+        <h1>Get a Fun Fact About Any Number!</h1>
+        <input type="number" id="numberInput" placeholder="Enter a number">
+        <button onclick="getNumberFact()">Get Fact</button>
+        <p id="fact"></p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,20 +1,19 @@
-document.getElementById('fetchFact').addEventListener('click', () => {
-    const number = document.getElementById('numberInput').value;
-    const factDisplay = document.getElementById('factDisplay');
-  
-    if (number === '') {
-      factDisplay.textContent = 'Please enter a number.';
-      return;
+function getNumberFact() {
+    const number = document.getElementById("numberInput").value;
+    const factDisplay = document.getElementById("fact");
+
+    if (number === "") {
+        factDisplay.innerText = "Please enter a number!";
+        return;
     }
-  
-    fetch(`http://numbersapi.com/${number}`)
-      .then(response => response.text())
-      .then(fact => {
-        factDisplay.textContent = fact;
-      })
-      .catch(error => {
-        factDisplay.textContent = 'An error occurred. Please try again.';
-        console.error('Error fetching data:', error);
-      });
-  });
-  
+
+    fetch(`https://numbersapi.com/${number}?json`)
+        .then(response => response.json())
+        .then(data => {
+            factDisplay.innerText = data.text;
+        })
+        .catch(error => {
+            factDisplay.innerText = "Error fetching data. Try again later!";
+            console.error("Error:", error);
+        });
+}
